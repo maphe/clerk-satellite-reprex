@@ -6,5 +6,24 @@
   "tags": [],
   "// targets": "to see all targets run: nx show project satellite-app --web",
   "targets": {
+    "dev": {
+      "executor": "@nx/next:server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "satellite-app:build",
+        "dev": true,
+        "port": 3001
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "satellite-app:build:development",
+          "dev": true
+        },
+        "production": {
+          "buildTarget": "satellite-app:build:production",
+          "dev": false
+        }
+      }
+    }
   }
 }

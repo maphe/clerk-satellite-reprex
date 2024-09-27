@@ -14,11 +14,10 @@ export default function RootLayout({
         <body className="p-5">
           <header className="flex justify-between">
             <h1 className="text-xl mb-6">Main App</h1>
-            <UserButton />
+            <SignedIn>
+              <UserButton />
+            </SignedIn>
           </header>
-          <SignedIn>
-            <UserButton />
-          </SignedIn>
           {children}
         </body>
       </html>
