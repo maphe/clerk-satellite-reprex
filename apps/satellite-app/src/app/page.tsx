@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function Index() {
   /*
    * Replace the elements below with your own.
@@ -6,7 +8,7 @@ export default function Index() {
    */
   return (
     <div>
-      <a href={'/test'}>Go to Test Page</a>
+      <Link href="/test">Go to Test Page</Link>
     </div>
   );
 }

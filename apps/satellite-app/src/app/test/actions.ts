@@ -3,13 +3,13 @@
 import { auth } from '@clerk/nextjs/server';
 
 export async function getSessionClaims() {
-  const { sessionClaims } = auth();
+  const { sessionClaims } = await auth();
 
   return sessionClaims;
 }
 
 export async function callApi() {
-  const { getToken } = auth();
+  const { getToken } = await auth();
 
   const token = await getToken();
 

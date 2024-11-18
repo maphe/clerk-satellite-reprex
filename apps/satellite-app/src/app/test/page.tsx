@@ -2,8 +2,8 @@ import { auth } from '@clerk/nextjs/server';
 import { ActionButton } from './_components/ActionButton';
 import { callApi, getSessionClaims } from './actions';
 
-export default function Index() {
-  const { sessionClaims } = auth();
+export default async function Index() {
+  const { sessionClaims } = await auth();
 
   return (
     <div>

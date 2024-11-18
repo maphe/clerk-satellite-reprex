@@ -1,11 +1,8 @@
 import './global.css';
 import { ClerkProvider, UserButton } from '@clerk/nextjs';
+import { ReactNode } from 'react';
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <ClerkProvider>
       <html lang="en">
