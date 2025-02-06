@@ -6,7 +6,11 @@ export default clerkMiddleware((auth, req) => {
   const externalHost =
     hostname !== null && hostname !== process.env['APP_DOMAIN'];
 
-  console.log('middleware', { hostname, externalHost });
+  console.log('middleware', {
+    hostname,
+    externalHost,
+    forwarded: req.headers.get('x-forwarded-host'),
+  });
 
   if (externalHost) {
     return NextResponse.rewrite(
